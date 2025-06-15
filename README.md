@@ -10,10 +10,10 @@ UniqueGen is an package for Node.js, It enables generating random numbers, alpha
 
 # Features
 
--   Generate random numbers
--   Generate random words
--   Generate random symbols
--   Generate random mixed IDs
+- Generate random numbers
+- Generate random words
+- Generate random symbols
+- Generate random mixed IDs
 
 # Security
 
@@ -140,7 +140,7 @@ randomMixed(); // it will generate a random mixed ID of length 10 with all alpha
 
 # Adtional Features
 
--   You can set Custom Symbols, Words, Numbers & Mixed Data in third parameter of the function object.
+- You can set Custom Symbols, Words, Numbers & Mixed Data in third parameter of the function object.
 
 # Contributing
 
