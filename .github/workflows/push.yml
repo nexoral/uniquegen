@@ -1,0 +1,43 @@
+name: Registry Publish
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    publish-to-npm:
+        name: Publish to NPM Registry
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: Install dependencies
+              run: npm install
+            - name: Build package
+              run: npm run build
+            - name: Test package
+              run: npm run test
+            - name: Publish to NPM
+              run: |
+                  echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+                  npm publish --registry https://registry.npmjs.org --access public
+
+    publish-to-github:
+        name: Publish to GitHub Package Registry
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: Install dependencies
+              run: npm install
+            - name: Build package
+              run: npm run build
+            - name: Test package
+              run: npm run test
+            - name: Publish to GitHub Packages
+              run: |
+                  echo "//npm.pkg.github.com/:_authToken=${{ secrets.GIT_AUTH_TOKEN }}" >> ~/.npmrc
+                  # scope package name for GitHub Packages
+                  sed -i '2s/"uniquegen"/"@${{ secrets.GIT_USER_NAME }}\/uniquegen"/' package.json
+                  npm publish --registry=https://npm.pkg.github.com --scope=@${{ secrets.GIT_USER_NAME }} --access public

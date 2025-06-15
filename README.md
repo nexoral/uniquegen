@@ -7,14 +7,13 @@ UniqueGen is an package for Node.js, It enables generating random numbers, alpha
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dt/uniquegen.svg?style=flat-square)](https://www.npmjs.com/package/uniquegen)
 [![CodeQL](https://github.com/AnkanSaha/uniquegen/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/AnkanSaha/uniquegen/actions/workflows/github-code-scanning/codeql)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/AnkanSaha/uniquegen/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/AnkanSaha/uniquegen/tree/main)
 
 # Features
 
--   Generate random numbers
--   Generate random words
--   Generate random symbols
--   Generate random mixed IDs
+- Generate random numbers
+- Generate random words
+- Generate random symbols
+- Generate random mixed IDs
 
 # Security
 
@@ -141,7 +140,7 @@ randomMixed(); // it will generate a random mixed ID of length 10 with all alpha
 
 # Adtional Features
 
--   You can set Custom Symbols, Words, Numbers & Mixed Data in third parameter of the function object.
+- You can set Custom Symbols, Words, Numbers & Mixed Data in third parameter of the function object.
 
 # Contributing
 
